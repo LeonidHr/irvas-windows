@@ -28,7 +28,7 @@ const modals = () => {
   
 }
 
-const modalTimerId = setTimeout(() => openModal('.popup'), 60000);
+const modalTimerId = setTimeout(() => openModal('.popup'), 6000000);
 
 function openModal(modalSelector) {
   document.querySelector(modalSelector).classList.add('show');
