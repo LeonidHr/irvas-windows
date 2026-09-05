@@ -6,7 +6,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
       
   function hideContent() {
     contentArr.forEach(item => {
-      item.classList.remove('show');
+      item.classList.remove('show', 'animated_4ms', 'fadeIn');
       item.classList.add('hide');
     });
 
@@ -16,7 +16,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
   }
 
   function showContent(i = 0) {
-    contentArr[i].classList.add('show');
+    contentArr[i].classList.add('show', 'animated_4ms', 'fadeIn');
     contentArr[i].classList.remove('hide');
     tabArr[i].classList.add(activeClass);
   }

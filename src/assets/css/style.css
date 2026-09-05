@@ -18,6 +18,11 @@ body {
   color: red;
 }
 
+.animated_4ms{
+  animation-duration: 0.4s;
+  animation-fill-mode:both
+}
+
 a:hover {
   text-decoration: none;
 }

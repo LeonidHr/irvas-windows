@@ -31,14 +31,14 @@ const modals = () => {
 const modalTimerId = setTimeout(() => openModal('.popup'), 6000000);
 
 function openModal(modalSelector) {
-  document.querySelector(modalSelector).classList.add('show');
+  document.querySelector(modalSelector).classList.add('show', 'animated_4ms', 'fadeIn');
   document.body.classList.add('modal-open');
 
   clearTimeout(modalTimerId);
 }
 
 function closeModal(modalSelector) {
-  document.querySelector(modalSelector).classList.remove('show');
+  document.querySelector(modalSelector).classList.remove('show', 'animated_4ms', 'fadeIn');
   document.body.classList.remove('modal-open');
 }
 
