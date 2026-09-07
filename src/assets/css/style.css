@@ -34,6 +34,12 @@ textarea:focus {
   outline: none;
 }
 
+.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+
 .no-padding {
   padding: 0 !important;
 }
@@ -930,6 +936,7 @@ textarea:focus {
 
 .popup_calc_content .balcon_icons {
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .popup_calc_content .big_img img {

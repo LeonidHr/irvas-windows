@@ -1,9 +1,10 @@
 import { closeModal } from "./modals";
+import checkPhoneInputs from "./checkPhoneInputs";
 
-const forms = () => {
+const forms = (calcState) => {
   const formsArr = document.querySelectorAll('form'),
         inputsArr = document.querySelectorAll('input'),
-        inputsPhoneArr = document.querySelectorAll('input[name="user_phone"]');
+        errorsArr = [];
 
   const statusMessages = {
     loading: 'Загрузка...',
@@ -11,11 +12,7 @@ const forms = () => {
     failure: 'Произошла ошибка'
   }
 
-  inputsPhoneArr.forEach(input => {
-    input.addEventListener('input', () => {
-      input.value = input.value.replace(/\D/, '');
-    })
-  })
+  checkPhoneInputs('input[name="user_phone"]');
 
   const postData = async (url, data) => {
     document.querySelector('.status').textContent = statusMessages.loading;
@@ -37,12 +34,29 @@ const forms = () => {
   formsArr.forEach(form => {
     form.addEventListener("submit", e => {
       e.preventDefault();
+      
+      const formData = new FormData(form);
+      if (form.dataset.calc === 'end') {
+        for (let key in calcState) {
+          formData.append(key, calcState[key]);
+        }
+      }
+
+      // formData.forEach((value, key) => {
+      //   if (!value.trim()) {
+      //     errorsArr.push(key);
+      //   }
+      // });
+
+      // errorsArr.forEach(error => {
+      //   form.querySelector(`[name="${error}"]`).classList.add('error');
+      // });
+
+
 
       const statusMessage = document.createElement('div');
       statusMessage.classList.add('status');
       form.appendChild(statusMessage);
-
-      const formData = new FormData(form);
 
       postData('./assets/server.php', formData)
         .then(res => {
