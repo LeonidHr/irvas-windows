@@ -42,4 +42,5 @@ function closeModal(modalSelector) {
   document.body.classList.remove('modal-open');
 }
 
+export {closeModal};
 export default modals;
