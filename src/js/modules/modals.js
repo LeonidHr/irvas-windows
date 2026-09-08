@@ -1,5 +1,12 @@
+import { validateForm } from "./forms";
 
-const modals = (triggerSelector, modalSelector, closeSelector, isCloseByOverlay = true) => {
+const modals = (
+  triggerSelector, 
+  modalSelector, 
+  closeSelector, 
+  isCloseByOverlay = true, 
+  isValidation = false,
+) => {
   const trigger = document.querySelectorAll(triggerSelector),
         modal = document.querySelector(modalSelector),
         close = document.querySelector(closeSelector);
@@ -8,6 +15,13 @@ const modals = (triggerSelector, modalSelector, closeSelector, isCloseByOverlay 
     item.addEventListener("click", e => {
       if (e.target) {
         e.preventDefault();
+
+        if (isValidation) {
+          if (!validateForm(item.closest('form'))) {
+            return;
+          }
+        }
+
         openModal(modalSelector);
       }
     });
