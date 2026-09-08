@@ -34,8 +34,51 @@ textarea:focus {
   outline: none;
 }
 
+.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+
+.error-message {
+  color: #a94442;
+}
+
 .no-padding {
   padding: 0 !important;
+}
+
+.radio-group {
+  margin-bottom: 1.2rem;
+}
+
+.popup_calc__row {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.input-wrap {
+  margin-bottom: 2rem;
+}
+
+.multiplication {
+  align-self: start;
+  margin-top: 2px !important;
+}
+
+.popup_calc__input-wpap {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 10rem 1fr;
+}
+
+.popup_calc__input-wpap .error-message {
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .form {
@@ -62,9 +105,9 @@ textarea:focus {
 }
 
 .form_input {
+  margin-bottom: 1.2rem;
   height: 5.8rem;
   padding: 0;
-  margin-bottom: 2rem;
   text-align: center;
   border-radius: 1rem;
   -moz-box-sizing: border-box;
@@ -930,6 +973,7 @@ textarea:focus {
 
 .popup_calc_content .balcon_icons {
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .popup_calc_content .big_img img {
@@ -960,7 +1004,7 @@ textarea:focus {
 
 .popup_calc input {
   display: inline-block;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   width: 10rem;
   margin-right: 0.3rem;
 }
