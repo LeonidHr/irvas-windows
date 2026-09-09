@@ -6,6 +6,7 @@ import tabs from './modules/tabs';
 import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
 import timer from './modules/timer';
+import gallery from './modules/gallery';
 
 window.addEventListener("DOMContentLoaded", () => {
   const calcState = {
@@ -26,4 +27,5 @@ window.addEventListener("DOMContentLoaded", () => {
   changeModalState(calcState);
   forms(calcState);
   timer('.container1', '2026-09-25');
+  gallery('.works');
 });
