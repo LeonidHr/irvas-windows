@@ -5,6 +5,7 @@ import modals from './modules/modals';
 import tabs from './modules/tabs';
 import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
+import timer from './modules/timer';
 
 window.addEventListener("DOMContentLoaded", () => {
   const calcState = {
@@ -24,4 +25,5 @@ window.addEventListener("DOMContentLoaded", () => {
   
   changeModalState(calcState);
   forms(calcState);
+  timer('.container1', '2026-09-25');
 });
