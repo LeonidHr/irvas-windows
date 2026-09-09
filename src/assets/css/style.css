@@ -23,6 +23,11 @@ body {
   animation-fill-mode:both
 }
 
+.animated_9ms{
+  animation-duration: 0.9s;
+  animation-fill-mode:both
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -877,7 +882,8 @@ textarea:focus {
 /*Modals*/
 .popup,
 .popup_engineer,
-.popup_calc_end {
+.popup_calc_end,
+.popup-img {
   display: none;
   position: fixed;
   top: 0;
